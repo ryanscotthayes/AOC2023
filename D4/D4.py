@@ -37,7 +37,6 @@ for game in allWins:
 
 print('Part 1: '+str(totalPoints))
 
-for i in 
 #print(allWins)
 #print(winningCards)
 
