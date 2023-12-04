@@ -1,11 +1,7 @@
 with open(r'./AOC2023/D4/D4.data') as f:
     lines = f.read().split('\n')
 
-def listIntersection(lst1, lst2):
-    lst3 = [value for value in lst1 if value in lst2]
-    return lst3
-
-winningNumsData,myNumsData,cardNumData = [],[],[]
+winningNumsData,myNumsData,cardNumData,allWins,winningCards = [],[],[],[],[]
 
 for i in lines: 
     cardNum = i.split(':')[0].split(' ')[1]
@@ -17,9 +13,8 @@ for i in lines:
     myNums = [int(k) for k in myNums if k != '']
     myNumsData.append(myNums) 
     
-allWins,winningCards = [],[]
 for i in range(0,len(lines)):
-    winningIntersects = listIntersection(winningNumsData[i],myNumsData[i])
+    winningIntersects = [value for value in winningNumsData[i] if value in myNumsData[i]]
     winningCards.append([i+1,len(winningIntersects),1])
     allWins.append(winningIntersects)
 
