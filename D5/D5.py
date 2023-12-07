@@ -22,7 +22,6 @@ def lkp(seed_nr,lkp):
         return seed_nr
 min = 9999999999
 for i in range(0,len(seeds)):
-    print(seeds[i])
     location = lkp(lkp(lkp(lkp(lkp(lkp(lkp(seeds[i],seed2soil),soil2fert),fert2watr),watr2lght),lght2temp),temp2humd),humd2loct)
     if location < min:
         min = location
