@@ -1,4 +1,6 @@
 import re
+from math import gcd
+
 with open(r'./AOC2023/D8/D8.data') as f:
     lines = f.read().split('\n')
 instructions = list(lines[0])
@@ -23,8 +25,19 @@ def search(instList,map,currentPos = 'AAA'):
             elif instList[i] == 'L':
                 currentPos = options[0]
                      
-        if currentPos =='ZZZ':
+        if currentPos[-1] =='Z':
                 return counter
 
 
 print('Part 1: '+ str(search(instructions,map,'AAA')))
+
+output2 = []
+for i in map: 
+    if i[0][-1] == 'A':
+        output2.append(search(instructions,map,i[0]))
+
+lcm = 1
+for i in output2:
+    lcm = lcm*i//gcd(lcm, i)
+
+print('Part 2: '+ str(lcm))
