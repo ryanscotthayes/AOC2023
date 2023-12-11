@@ -1,5 +1,4 @@
 import numpy as np
-#from numpy.polynomial.polynomial import Polynomial
 
 with open(r'./AOC2023/D9/D9.data') as f:
     lines = [x.split(' ') for x in f.read().split('\n')]
@@ -10,7 +9,6 @@ for i in lines:
     for j in i:
         intermed.append(int(j))
     data.append(intermed)
-
 
 answer,answer2 = 0,0
 answerArray = []
